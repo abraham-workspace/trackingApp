@@ -1,0 +1,12 @@
+Overview of Authentication Flow
+1. User Registers or Logs In
+Flutter app sends credentials to Express backend.
+
+Backend verifies them, then generates a JWT token.
+
+Backend sends the token back in the JSON response body.
+
+Flutter stores this JWT using flutter_secure_storage.
+
+2. User Makes Authenticated Requests
+Flutter reads JWT from storage and adds it to the Authorization header:
